@@ -10,3 +10,15 @@ const Themes = {
     normal: '2.25rem', //36
     large: '4.5rem', //72
   },
+  fontFamilies: {
+    primary: {
+      fontSource:
+        'https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap',
+      fontFamily: 'Rubik, sans-serif',
+    },
+    secondary: {
+      fontSource:
+        'https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap',
+      fontFamily: 'Roboto Mono, monospace',
+    },
+  },
