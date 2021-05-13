@@ -22,3 +22,13 @@ const Themes = {
       fontFamily: 'Roboto Mono, monospace',
     },
   },
+  mediaQueries: {
+    small: `only screen and (max-width: 768px)`,
+    medium: `only screen and (min-width: 769px)`,
+    large: `only screen and (min-width: 1024px)`,
+    wide: `only screen and (min-width: 1440px)`,
+    ultra: `only screen and (min-width: 1600px)`,
+  },
+};
+
+export default Themes;
