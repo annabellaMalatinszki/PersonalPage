@@ -1,8 +1,10 @@
 const Themes = {
   colors: {
     main: 'rgba(173, 127, 175, 0.637)',
+    mainFuller: 'rgba(173, 127, 175, 1)',
     dark: 'rgb(0, 0, 0)',
     light: 'rgb(128, 128, 128)',
+    lightest: 'rgb(255, 255, 255)',
     highlighted: 'rgb(186, 180, 191)',
   },
   fontSizes: {
