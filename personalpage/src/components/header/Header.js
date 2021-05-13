@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
@@ -34,13 +35,37 @@ const HeaderInner = styled.div`
 `;
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(0);
+
+  const progressScroll = () => {
+    const scrollPx = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    const winHeightPx = scrollHeight - clientHeight;
+
+    const scrollPercent = `${(scrollPx / winHeightPx) * 100}%`;
+
+    setScrolled(scrollPercent);
+  };
+
+  useEffect(() => {
+    const watchScroll = () => {
+      window.addEventListener('scroll', progressScroll);
+    };
+    watchScroll();
+    return () => {
+      window.removeEventListener('scroll', watchScroll);
+    };
+  });
+
   return (
     <StyledHeader>
       <HeaderInner>
         <Logo />
         <LanguageSwitcher />
       </HeaderInner>
-      <ScrollIndicator />
+      <ScrollIndicator scrolled={scrolled} />
     </StyledHeader>
   );
 };
